@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAGOYA COLLAB SQUARE</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">    
+  <style>
+      #preloader {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 9999;
+          overflow: hidden;
+      }
+
+
+      /*------------------------------------
+      - COLOR primary
+      ------------------------------------*/
+      .alert-primary {
+          color: #E15B43;
+          background-color: #8EB3D8;
+          border-color: #8EB3D8;
+      }
+
+      .alert-primary hr {
+          border-top-color: #8EB3D8;
+      }
+
+      .alert-primary .alert-link {
+          color: #283214;
+      }
+
+      .badge-primary {
+          color: #212529;
+          background-color: #2F6CB8;
+      }
+
+      .badge-primary[href]:hover, .badge-primary[href]:focus {
+          color: #212529;
+          background-color: #2F6CB8;
+      }
+
+      .bg-primary {
+          background-color: #000000 !important;
+      }
+
+      a.bg-primary:hover, a.bg-primary:focus,
+      button.bg-primary:hover,
+      button.bg-primary:focus {
+          background-color: #2F6CB8 !important;
+      }
+
+      .border-primary {
+          border-color: #2F6CB8 !important;
+      }
+
+      .btn-primary {
+          color: #212529;
+          background-color: #2F6CB8;
+          border-color: #E15B43;
+      }
+
+      .btn-primary:hover {
+          color: #212529;
+          background-color: #2F6CB8;
+          border-color: #2F6CB8;
+      }
+
+      .btn-primary:focus, .btn-primary.focus {
+          box-shadow: 0 0 0 0.2rem rgba(139, 174, 70, 0.5);
+      }
+
+      .btn-primary.disabled, .btn-primary:disabled {
+          color: #212529;
+          background-color: #2F6CB8;
+          border-color: #2F6CB8;
+      }
+
+      .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+          color: #212529;
+          background-color: #2F6CB8;
+          border-color: #2F6CB8;
+      }
+
+      .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus {
+          box-shadow: 0 0 0 0.2rem rgba(139, 174, 70, 0.5);
+      }
+
+      .btn-outline-primary {
+          color: #8BAE46;
+          background-color: transparent;
+          border-color: #2F6CB8;
+      }
+
+      .btn-outline-primary:hover {
+          color: #212529;
+          background-color: #2F6CB8;
+          border-color: #2F6CB8;
+      }
+
+      .btn-outline-primary:focus, .btn-outline-primary.focus {
+          box-shadow: 0 0 0 0.2rem rgba(139, 174, 70, 0.5);
+      }
+
+      .btn-outline-primary.disabled, .btn-outline-primary:disabled {
+          color: #2F6CB8;
+          background-color: transparent;
+      }
+
+      .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active, .show > .btn-outline-primary.dropdown-toggle {
+          color: #212529;
+          background-color: #2F6CB8;
+          border-color: #2F6CB8;
+      }
+
+      .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-primary.dropdown-toggle:focus {
+          box-shadow: 0 0 0 0.2rem rgba(139, 174, 70, 0.5);
+      }
+
+      .list-group-item-primary {
+          color: #455622;
+          background-color: #8EB3D8;
+      }
+
+      .list-group-item-primary.list-group-item-action:hover, .list-group-item-primary.list-group-item-action:focus {
+          color: #455622;
+          background-color: #8EB3D8;
+      }
+
+      .list-group-item-primary.list-group-item-action.active {
+          color: #212529;
+          background-color: #455622;
+          border-color: #455622;
+      }
+
+      .table-primary,
+      .table-primary > th,
+      .table-primary > td {
+          background-color: #8EB3D8;
+      }
+
+      .table-hover .table-primary:hover {
+          background-color: #8EB3D8;
+      }
+
+      .table-hover .table-primary:hover > td,
+      .table-hover .table-primary:hover > th {
+          background-color: #8EB3D8;
+      }
+
+      .text-primary {
+          color: #000000 !important;
+      }
+
+      a.text-primary:hover, a.text-primary:focus {
+          color: #6d8937 !important;
+      }
+
+  </style>   
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white">
+  <div class="container">
+      <a class="navbar-brand" href="#"><img src="./image/logo.png" height="30"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse fw-bold" id="navbarNav">
+          <ul class="navbar-nav ms-auto me-2">
+              <li class="nav-item"><a class="nav-link" aria-current="page" href="#hero">トップ</a></li>
+              <li class="nav-item"><a class="nav-link" href="#team">シンポジウム</a></li>
+              <li class="nav-item"><a class="nav-link" href="https://q-quest.jp/">トップページ</a></li>
+          </ul>
+      </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="bg-primary text-white" id="hero">
+  <div class="container-fluid g-0 overflow-hidden">
+      <div class="row align-items-center">
+          <div class="col-lg-6">
+              <img src="./image/main.jpeg" class="img-fluid" data-aos="fade-in" data-aos-delay="200">
+          </div>
+          <div class="col-lg-6 px-5 py-3" data-aos="fade-up" data-aos-delay="200">
+              <p class="badge bg-white text-primary fs-6 mb-1">(公財)名古屋観光コンベンションビューロー主催</p>
+              <h2>NAGOYA COLLAB SQUARE</h2>
+              <p>名古屋ならではのスタイルとして、本地域の持つ特性を活かしアカデミアと産業の交流を促進し、イノベーションや経済波及効果を創出するとともに、新たな見本市・展示会、学会の開催、名古屋の未来のさらなる発展につなげます。</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+<!-- YOUTUBE -->
+<!-- <section class="bg-light p-0" id="youtube">
+  <div class="container overflow-hidden">
+      <div class="row text-center mb-5 mt-5">
+          <h2><span class="text-primary"><i class="bi bi-play-btn-fill"></i></span> 動画 & AI要約</h2>
+          <p>要約はChatGPTを活用して生成。</p>
+      </div>
+  </div>
+</section> -->
+
+
+<!-- 1人目 -->
+<section class="bg-white p-0" id="team">
+  <div class="container overflow-hidden">                
+      <div class="row my-5 align-items-center">
+          <div class="col-lg-6 order-lg-1" data-aos="zoom-in-right">
+              <div class="ratio ratio-16x9">
+                <img src="./image/a001.jpg" class="img-fluid" data-aos="fade-in" data-aos-delay="200">
+              </div>
+          </div>
+          <div class="col-lg-6 order-lg-2 mt-3" data-aos="fade-left">        
+              <!-- <div class="text-secondary small mb-2"><i class="bi bi-calendar"></i> 2023/11/11</div> -->             
+              <h3 class="text-primary">信川 省吾</h3>            
+              <!-- <span class="badge bg-secondary text-white mb-1">5:57</span> -->
+              <div class="text-secondary border-bottom mb-2"><i class="bi bi-person"></i>タイトル</div>
+              <p>透明プラスチックはまだ進化する！<br>より強く、扱いやすい材料へ</p>
+              <div class="text-secondary border-bottom mb-2"></div>
+              <p>▼肩書<br>名古屋工業大学<br>大学院工学研究科工学専攻<br>生命・応用化学系プログラム<br>ソフトマテリアル分野<br>准教授<br>博士（理学）</p>
+          </div>
+      </div>   
+  </div>
+</section>
+
+<!-- ２人目 -->
+<section class="bg-light p-0">
+  <div class="container overflow-hidden">                
+      <div class="row my-5 align-items-center">
+          <div class="col-lg-6 order-lg-1" data-aos="zoom-in-right">
+              <div class="ratio ratio-16x9">
+              <img src="./image/b001.jpg" class="img-fluid" data-aos="fade-in" data-aos-delay="200">
+              </div>
+          </div>
+          <div class="col-lg-6 order-lg-2 mt-3" data-aos="fade-left">        
+              <!-- <div class="text-secondary small mb-2"><i class="bi bi-calendar"></i> 2023/11/11</div> -->              
+              <h3 class="text-primary">守谷 せいら</h3>            
+              <!-- <span class="badge bg-secondary text-white mb-1">5:01</span> -->
+              <div class="text-secondary border-bottom mb-2"><i class="bi bi-person"></i>タイトル</div>
+              <p>表面改質技術でお応えします！<br>複合材料開発のお困りごとを教えてください。</p>
+              <div class="text-secondary border-bottom mb-2"></div>
+              <p>▼肩書<br>中部大学<br>工学部 応用化学科<br>講師<br>博士（工学）</p>
+          </div>
+      </div>   
+  </div>
+</section>
+
+<!-- ３人目 -->
+<section class="bg-white p-0">
+  <div class="container overflow-hidden">                
+      <div class="row my-5 align-items-center">
+          <div class="col-lg-6 order-lg-1" data-aos="zoom-in-right">
+              <div class="ratio ratio-16x9">
+              <img src="./image/c001.jpg" class="img-fluid" data-aos="fade-in" data-aos-delay="200">
+              </div>
+          </div>
+          <div class="col-lg-6 order-lg-2 mt-3" data-aos="fade-left">        
+              <!-- <div class="text-secondary small mb-2"><i class="bi bi-calendar"></i> 2023/11/11</div> -->              
+              <h3 class="text-primary">入澤 寿平</h3>            
+              <!-- <span class="badge bg-secondary text-white mb-1">5:04</span> -->
+              <div class="text-secondary border-bottom mb-2"><i class="bi bi-person"></i>タイトル</div>
+              <p>脱炭素？必炭素？<br>〜炭素が支えるプラスチック・繊維材料〜</p>
+              <div class="text-secondary border-bottom mb-2"></div>
+              <p>▼肩書<br>岐阜大学<br>工学部 化学・生命工学科<br>物質化学コース<br>Future Fiber Factory 工場長<br>博士（工学）</p>
+          </div>
+      </div>   
+  </div>
+</section>
+
+<!-- ４人目 -->
+<section class="bg-light p-0">
+  <div class="container overflow-hidden">                
+      <div class="row my-5 align-items-center">
+          <div class="col-lg-6 order-lg-1" data-aos="zoom-in-right">
+              <div class="ratio ratio-16x9">
+                <img src="./image/d001.jpg" class="img-fluid" data-aos="fade-in" data-aos-delay="200">
+              </div>
+          </div>
+          <div class="col-lg-6 order-lg-2 mt-3" data-aos="fade-left">        
+              <!-- <div class="text-secondary small mb-2"><i class="bi bi-calendar"></i> 2023/11/11</div> -->              
+              <h3 class="text-primary">永田 謙二&江口 裕</h3>            
+              <!-- <span class="badge bg-secondary text-white mb-1">3:28</span> -->
+              <div class="text-secondary border-bottom mb-2"><i class="bi bi-person"></i>タイトル</div>
+              <p>複合化技術で実現する高分子材料の電気・熱・摩擦性能向上と持続可能資源利用</p>
+              <div class="text-secondary border-bottom mb-2"></div>
+              <p>▼肩書（永田 謙二）<br>名古屋工業大学<br>産学官金連携機構<br>大学院工学研究科工学専攻<br>生命・応用化学系プログラム<br>教授 副機構長<br>博士（工学）
+                 <br>▼肩書（江口 裕）<br>名古屋工業大学<br>大学院工学研究科工学専攻<br>生命・応用化学系プログラム<br>助教<br>博士（工学）</p>
+          </div>
+      </div>   
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="bg-white py-5" id="team">
+    <div class="container overflow-hidden">
+        <div class="row mb-5 align-items-center">
+            
+        <div class="row text-center" data-aos="zoom-in">
+            <div class="cols">
+            <h3 class="py-5">会場</h3>
+            </div>
+        </div>
+    
+        <div class="col-lg-6 order-lg-1" data-aos="zoom-in-right">
+            <img class="img-fluid" src="./image/会場.jpg">
+        </div>
+        <div class="col-lg-6 order-lg-2" data-aos="fade-left">
+            <span class="display-6 text-success">シンポジウム会場</span>
+            <p class="lead">ポートメッセなごや 交流センター 第3会議室</p>
+            <span class="display-6 text-success">ネットワーキングスペース</span>
+            <p class="lead">ポートメッセなごや 第3展示館 小間番号M-2</p>
+        </div>
+        </div>
+    </div>
+</section>
+  
+
+
+<!-- FOOTER -->
+<footer class="py-3 bg-primary">
+  <div class="container">
+      <div class="row">
+          <div class="col"><a href="https://nagoyaboost.jp/" class="text-decoration-none text-white">NAGOYA COLLAB SQUARE</a></div>
+          <div class="col text-end"><a href="#" class="text-decoration-none text-white"><i class="bi bi-chevron-up"></i> トップへ戻る</a></div>
+      </div>
+  </div>
+</footer>
+
+<!-- preloader -->
+<section id="preloader" class="d-flex justify-content-center vh-100 vw-100 align-items-center bg-light">
+  <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+      duration: 1000,
+      once: true,
+  });
+</script> 
+
+<!-- JavaScript preloader -->
+<script>
+  window.addEventListener('load', () => {
+      document.getElementById('preloader').remove()
+  });
+</script>
+</body>
+</html>
